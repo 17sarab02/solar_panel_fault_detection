@@ -1,0 +1,59 @@
+button{
+  grid-area: Button;
+  padding: 0.6rem;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  margin: 20px;
+  cursor: pointer;
+  transition: 0.5s all ease;
+  outline: none; border: none;
+}
+
+button[disabled]{
+  filter: brightness(500%) saturate(40%);
+  opacity: 50%;
+  cursor: no-drop;
+}
+
+.VideoBox{
+  position: relative;
+  width: 20vw;
+  height: 20vw;
+  background: black;
+  grid-area: VideoOutput;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+video{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.swipeUp{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(rgb(85, 255, 241), rgba(255, 255, 255, 0));
+  animation: swipeUp 2s ease-in-out infinite;
+}
+
+@keyframes swipeUp {
+  0% {transform: translateY(100%);}
+  80% {transform: translateY(-100%);}
+  100% {transform: translateY(-100%);}
+}
+
+canvas{
+  display: none;
+  width: 20vw;
+  grid-area: PhotoOutput;
+}
+
+.VideoObject {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

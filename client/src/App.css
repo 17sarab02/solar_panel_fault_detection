@@ -1,0 +1,88 @@
+:root {
+  --scrollbar_width: 10px;
+  --color1: #000000;
+  --color2: #212121;
+  --color3: #6B6B6B;
+  --color4: #909090;
+  --color5: #BFBFBF;
+  --color6: #FFFFFF;
+}
+
+*{
+  margin: 0px; padding: 0px;
+  box-sizing: border-box;
+  font-family: Montserrat;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: var(--scrollbar_width);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background_color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0);
+  transition: 2s all ease;
+  border-radius: calc(var(--scrollbar_width) / 2)
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+h1{
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+h2{
+  font-size: 1.75rem;
+  font-weight: 400;
+}
+
+h3{
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+h4{
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.MainTitle{
+  text-align: center;
+  grid-area: MainTitle;
+  padding: 40px;
+}
+
+.PredictionContainer, .VideoContainer{
+  display: flex;
+  padding: 30px;
+}
+
+.VideoContainer{ 
+  justify-content: right;
+  grid-area: VideoContainer;
+}
+
+.PredictionContainer{
+  justify-content: left;
+  grid-area: PredictionContainer;
+}
+
+body{
+  background: radial-gradient(farthest-corner at 0px 0px, var(--color2), var(--color1));
+  min-height: 100vh;
+}
+
+.App {
+  width: calc(100vw - var(--scrollbar_width));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "MainTitle MainTitle" "VideoContainer PredictionContainer";
+}
